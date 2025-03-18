@@ -1,5 +1,5 @@
 {% set name = "turbo_turtle" %}
-{% set version = "1.1.3" %}
+{% set version = "1.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lanl-aea/turbo-turtle/archive/refs/tags/{{ version }}.tar.gz
-  sha256: f97faeeb0db3e60d754bc2c2e26c21b41d570218e35457aa7f9b6d3d3fad4279
+  sha256: e9da8e3b75010c7895d1187d953016b097336ed8de593fa8fc559ce060e9a904
 
 build:
   noarch: python
