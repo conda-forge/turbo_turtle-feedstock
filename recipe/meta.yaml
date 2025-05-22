@@ -14,6 +14,9 @@ build:
   number: 0
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+  script:
+    - scons install --prefix=${PREFIX}  # [unix]
+    - scons install --prefix=%PREFIX%  # [win]
   entry_points:
     - turbo-turtle = turbo_turtle._main:main
 
@@ -24,20 +27,20 @@ requirements:
     - pip
     - pytest
     - lazy_loader >=0.4
-    - scons >=4
-    - setuptools >=64
+    - scons >=4.6
+    - setuptools >=77
     - setuptools_scm >=8
-    - sphinx >=5.1
+    - sphinx >=7.1
     - sphinx-argparse
     - sphinx-copybutton >=0.5.1
     - sphinx-book-theme
     - sphinxcontrib-bibtex
-    - waves >=0.11.0
+    - waves >=0.13
   run:
     - python >={{ python_min }}
     - lazy_loader >=0.4
-    - scons >=4
-    - waves >=0.11.0
+    - scons >=4.6
+    - waves >=0.13
 
 test:
   requires:
