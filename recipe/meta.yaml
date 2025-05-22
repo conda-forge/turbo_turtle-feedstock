@@ -1,5 +1,5 @@
 {% set name = "turbo_turtle" %}
-{% set version = "1.1.5" %}
+{% set version = "1.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,37 +7,42 @@ package:
 
 source:
   url: https://github.com/lanl-aea/turbo-turtle/archive/refs/tags/{{ version }}.tar.gz
-  sha256: a54ce887c5316f96b7057a9d15d7f594c180867f50a0c48af9f9f8d4de603490
+  sha256: 62204c44f80d88b6df44ce639e064c122b7fcf67eae346b397687e4bd2982552
 
 build:
   noarch: python
   number: 0
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+  script:
+    - scons install --prefix=${PREFIX}  # [unix]
+    - scons install --prefix=%PREFIX%  # [win]
   entry_points:
     - turbo-turtle = turbo_turtle._main:main
 
 requirements:
   host:
-    - python {{ python_min }}
+    # TODO: reset to use ``>={{ python_min }}`` when minimum is set to Python 3.10 or when a combination of
+    # sphinx/importlib compatibility can be found for Python 3.9 builds
+    - python >=3.10
     - python-build
     - pip
     - pytest
     - lazy_loader >=0.4
-    - scons >=4
-    - setuptools >=64
+    - scons >=4.6
+    - setuptools >=77
     - setuptools_scm >=8
-    - sphinx >=5.1
+    - sphinx >=7.1
     - sphinx-argparse
     - sphinx-copybutton >=0.5.1
     - sphinx-book-theme
     - sphinxcontrib-bibtex
-    - waves >=0.11.0
+    - waves >=0.13
   run:
     - python >={{ python_min }}
     - lazy_loader >=0.4
-    - scons >=4
-    - waves >=0.11.0
+    - scons >=4.6
+    - waves >=0.13
 
 test:
   requires:

@@ -35,7 +35,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-turbo_turtle-green.svg)](https://anaconda.org/conda-forge/turbo_turtle) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/turbo_turtle.svg)](https://anaconda.org/conda-forge/turbo_turtle) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/turbo_turtle.svg)](https://anaconda.org/conda-forge/turbo_turtle) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/turbo_turtle.svg)](https://anaconda.org/conda-forge/turbo_turtle) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-turbo__turtle-green.svg)](https://anaconda.org/conda-forge/turbo_turtle) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/turbo_turtle.svg)](https://anaconda.org/conda-forge/turbo_turtle) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/turbo_turtle.svg)](https://anaconda.org/conda-forge/turbo_turtle) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/turbo_turtle.svg)](https://anaconda.org/conda-forge/turbo_turtle) |
 
 Installing turbo_turtle
 =======================
