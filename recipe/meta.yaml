@@ -30,8 +30,8 @@ requirements:
     - scons >=4.6
     - setuptools >=77
     - setuptools_scm >=8
-    - sphinx >=7.1
-    - sphinx-argparse
+    - sphinx >=8
+    - sphinx-argparse >=0.5
     - sphinx-copybutton >=0.5.1
     - sphinx-book-theme
     - sphinxcontrib-bibtex
