@@ -1,5 +1,8 @@
 {% set name = "turbo_turtle" %}
 {% set version = "1.2.7" %}
+# TODO: reset to use ``>={{ python_min }}`` when minimum is set to Python 3.10 or when a combination of
+# sphinx/importlib compatibility can be found for Python 3.9 builds
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -22,9 +25,7 @@ build:
 
 requirements:
   host:
-    # TODO: reset to use ``>={{ python_min }}`` when minimum is set to Python 3.10 or when a combination of
-    # sphinx/importlib compatibility can be found for Python 3.9 builds
-    - python >=3.10
+    - python >={{ python_min }}
     - python-build
     - pip
     - pytest
@@ -34,8 +35,9 @@ requirements:
     - setuptools_scm >=8
     - sphinx >=7.1
     - sphinx-argparse
-    - sphinx-copybutton >=0.5.1
     - sphinx-book-theme
+    - sphinx-copybutton >=0.5.1
+    - sphinx-design
     - sphinxcontrib-bibtex
     - waves >=0.13
   run:
