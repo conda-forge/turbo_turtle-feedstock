@@ -1,8 +1,5 @@
 {% set name = "turbo_turtle" %}
-{% set version = "1.2.7" %}
-# TODO: reset to use ``>={{ python_min }}`` when minimum is set to Python 3.10 or when a combination of
-# sphinx/importlib compatibility can be found for Python 3.9 builds
-{% set python_min = "3.10" %}
+{% set version = "1.2.8" %}
 
 package:
   name: {{ name|lower }}
@@ -10,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lanl-aea/turbo-turtle/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 0611e00c73ac44bc2817c030964a561e447656a6a1e889bc60351d895b075393
+  sha256: 08544b97d90ac5e58ea52e00dee6f475524ec256b192eff3223584abfda27102
 
 build:
   noarch: python
@@ -27,9 +24,11 @@ requirements:
   host:
     - python >={{ python_min }}
     - python-build
+    - python-gmsh >=4
     - pip
     - pytest
     - lazy_loader >=0.4
+    - matplotlib-base >=3
     - scons >=4.6
     - setuptools >=77
     - setuptools_scm >=8
@@ -40,8 +39,12 @@ requirements:
     - sphinx-design
     - sphinxcontrib-bibtex
     - waves >=0.13
+    # Python-Gmsh requires OpenGL, but does not use an OpenGL runtime dependency. Conda-forge recipe image doesn't have
+    # OpenGL installed on the system. Make it available for the conda-forge recipe runner.
+    - libgl-devel  # [linux]
   run:
     - python >={{ python_min }}
+    - matplotlib-base >=3
     - lazy_loader >=0.4
     - scons >=4.6
     - waves >=0.13
@@ -51,7 +54,11 @@ test:
     - pip
     - pytest
     - pytest-xdist
+    - python-gmsh >=4
     - python {{ python_min }}
+    # Python-Gmsh requires OpenGL, but does not use an OpenGL runtime dependency. Conda-forge recipe image doesn't have
+    # OpenGL installed on the system. Make it available for the conda-forge recipe runner.
+    - libgl-devel  # [linux]
   imports:
     - turbo_turtle
 
