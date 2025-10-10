@@ -39,6 +39,9 @@ requirements:
     - sphinx-design
     - sphinxcontrib-bibtex
     - waves >=0.13
+    # Python-Gmsh requires OpenGL, but does not use an OpenGL runtime dependency. Conda-forge recipe image doesn't have
+    # OpenGL installed on the system. Make it available for the conda-forge recipe runner.
+    - libgl-devel  # [linux]
   run:
     - python >={{ python_min }}
     - matplotlib-base >=3
@@ -53,6 +56,9 @@ test:
     - pytest-xdist
     - python-gmsh >=4
     - python {{ python_min }}
+    # Python-Gmsh requires OpenGL, but does not use an OpenGL runtime dependency. Conda-forge recipe image doesn't have
+    # OpenGL installed on the system. Make it available for the conda-forge recipe runner.
+    - libgl-devel  # [linux]
   imports:
     - turbo_turtle
 
