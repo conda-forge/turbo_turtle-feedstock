@@ -1,8 +1,5 @@
 {% set name = "turbo_turtle" %}
 {% set version = "1.2.8" %}
-# TODO: reset to use ``>={{ python_min }}`` when minimum is set to Python 3.10 or when a combination of
-# sphinx/importlib compatibility can be found for Python 3.9 builds
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -27,9 +24,11 @@ requirements:
   host:
     - python >={{ python_min }}
     - python-build
+    - python-gmsh >=4
     - pip
     - pytest
     - lazy_loader >=0.4
+    - matplotlib-base >=3
     - scons >=4.6
     - setuptools >=77
     - setuptools_scm >=8
@@ -42,6 +41,7 @@ requirements:
     - waves >=0.13
   run:
     - python >={{ python_min }}
+    - matplotlib-base >=3
     - lazy_loader >=0.4
     - scons >=4.6
     - waves >=0.13
@@ -51,6 +51,7 @@ test:
     - pip
     - pytest
     - pytest-xdist
+    - python-gmsh >=4
     - python {{ python_min }}
   imports:
     - turbo_turtle
