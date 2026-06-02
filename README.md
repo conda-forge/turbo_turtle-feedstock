@@ -16,7 +16,6 @@ Documentation: https://lanl-aea.github.io/turbo-turtle/index.html
 Turbo-Turtle (LANL code O4765) is a solid body modeling tools for 2D sketched, 2D axisymmetric, and 3D revolved
 models.
 
-
 Current build status
 ====================
 
