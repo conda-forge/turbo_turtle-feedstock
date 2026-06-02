@@ -10,7 +10,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://github.com/lanl-aea/turbo-turtle/archive/refs/tags/{{ version }}.tar.gz
+  url: https://github.com/lanl-aea/turbo-turtle/archive/refs/tags/${{ version }}.tar.gz
   sha256: 6830594a19f395bcd8f0b3eeee2355bf4942b4a839207e8fef43cf4854f1ebf6
 
 build:
