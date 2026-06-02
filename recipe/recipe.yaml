@@ -30,7 +30,7 @@ build:
 
 requirements:
   host:
-    - python
+    - python ${{ python_min }}.*
     - python-build
     - python-gmsh >=4
     - pip
@@ -61,6 +61,7 @@ tests:
       imports:
         - turbo_turtle
       pip_check: false
+      python_version: ${{ python_min }}.*
   - script:
       - if: unix
         then:
@@ -74,6 +75,7 @@ tests:
           - pytest --basetemp %working_directory%\pytest-temp -vvv -n 4 --ignore=_abaqus_python -m "not require_third_party"
     requirements:
       run:
+        - python ${{ python_min }}.*
         - pip
         - pytest
         - pytest-xdist
