@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: turbo_turtle
-  version: "1.2.12"
+  version: "1.2.13"
   python_min: "3.10"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://github.com/lanl-aea/turbo-turtle/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 6830594a19f395bcd8f0b3eeee2355bf4942b4a839207e8fef43cf4854f1ebf6
+  sha256: 2bbb5e74fc9a95d961ab7d5bce496fd60e9436dddff58ee3110c4123d5388653
 
 build:
   number: 0
